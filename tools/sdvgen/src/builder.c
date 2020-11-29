@@ -2070,7 +2070,7 @@ generate_code ()
       PRT_CFGC ("INVALID_PRIO, ");
     } else {
       for_each (resource, task->resource, index2) {
-        if (resource->property.type == RESOURCE_TYPE_INTERNAL) {
+        if (resource->property.type != RESOURCE_TYPE_INTERNAL) {
           PRT_CFGC ("%d, ", resource->priority);
           break;
         }
